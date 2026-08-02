@@ -1,1 +1,2 @@
-*.mp4
+# Only ignore files > 100MB because GitHub will crash otherwise.
+first_1.mp4
