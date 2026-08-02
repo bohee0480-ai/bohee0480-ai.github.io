@@ -1785,3 +1785,10 @@ body.light-mode .blueprint-bg {
         line-height: 1.5;
     }
 }
+
+
+/* Desktop Z-Index Fix */
+.custom-1-grid, .custom-2-grid, .custom-3-grid, .custom-4-grid, .video-wrapper, .video-original-wrapper {
+    z-index: 10;
+    position: relative;
+}
