@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+        <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LEE BOHEE | 3D Motion Artist & Fashion Director</title>
+    <!-- 1. SEO 기본 -->
+    <meta name="description" content="이보희 포트폴리오 — 11년 패션 디렉터 경력, Cinema 4D, Octane, ComfyUI를 활용한 3D 모션 & AI 아트 작업.">
+    <meta name="keywords" content="이보희, 포트폴리오, 3D 모션, AI 아트, 패션 디자이너, Cinema 4D, Octane, ComfyUI, After Effects">
+    <meta name="author" content="Lee Bohee">
+    <!-- 2. Open Graph (카카오톡, 페이스북, 링크드인 공유 시 미리보기) -->
+    <meta property="og:title" content="LEE BOHEE | 3D Motion & AI Art Portfolio">
+    <meta property="og:description" content="상상이 현실이 되는 과정 — 11년 패션 디렉터가 만드는 3D 모션 & AI 아트.">
+    <meta property="og:image" content="./profile_editorial.png">
+    <meta property="og:type" content="website">
+    <!-- 3. 트위터 카드 -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="LEE BOHEE | Portfolio">
+    <meta name="twitter:description" content="3D Motion Artist & Fashion Director">
+    <meta name="twitter:image" content="./profile_editorial.png">
+    <!-- 4. 파비콘 (브라우저 탭 아이콘) -->
+    <link rel="icon" type="image/png" href="./assets/favicon.png">
+    <!-- 5. 색상 테마 (모바일 브라우저 상단 바 색상) -->
+    <meta name="theme-color" content="#1A1A1A">
+    
+    <!-- Fonts: Anton (볼드 �세리프), Playfair Display (꼬불거리�트), Inter (깔끔본문) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2family=Anton&family=Playfair+Display:ital,wght@1,600&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <!-- 0. CYBER PRELOADER -->
+    <div id="cyber-preloader">
+        <div class="preloader-content">
+            <div class="terminal-text" id="terminal-text"></div>
+            <div class="progress-bar-container">
+                <div class="progress-bar" id="progress-bar"></div>
+            </div>
+            <div class="progress-text" id="progress-text">00%</div>
+        </div>
+    </div>
+    <!-- 2��션: �크�컬 블루�린(그리배경 + 반짝�는 캔버�트) -->
+    <canvas id="blueprint-canvas" class="blueprint-bg"></canvas>
+
+    <!-- �단 �비게이-->
+    <header class="navbar">
+        <div class="logo">BOH.EE</div>
+        <nav>
+            <a href="#work">WORK</a>
+            <a href="#about">ABOUT</a>
+            <a href="#" id="theme-toggle">LIGHT MODE</a>
+        </nav>
+    </header>
+
+    <!-- 1. HERO SECTION (3D ORBITAL SPHERES) -->
+    <section class="hero-poster" id="about">
+        <!-- 무중�티캔버-->
+        <canvas id="particle-canvas"></canvas>
+        
+        <!-- 궤도 �스컨테�너 -->
+        <div class="planetary-system">
+            <!-- 중앙 �물 �진 (�양) -->
+            <div class="center-anchor">
+                <img src="profile.jpg" alt="Lee Bohee">
+            </div>
+
+            <!-- 궤도 1: PROFILE -->
+            <div class="orbit-container orbit-1">
+                <div class="mini-text-sphere" data-target="modal-1" data-word="PROFILE"></div>
+            </div>
+
+            <!-- 궤도 2: EDUCATION -->
+            <div class="orbit-container orbit-2">
+                <div class="mini-text-sphere" data-target="modal-2" data-word="EDUCATION"></div>
+            </div>
+
+            <!-- 궤도 3: DIRECTOR -->
+            <div class="orbit-container orbit-3">
+                <div class="mini-text-sphere" data-target="modal-3" data-word="DIRECTOR"></div>
+            </div>
+
+            <!-- 궤도 4: VISION -->
+            <div class="orbit-container orbit-4">
+                <div class="mini-text-sphere" data-target="modal-4" data-word="VISION"></div>
+            </div>
+        </div>
+
+        <!-- 모달 �업 (�릭 ���어 보여��용 -->
+        <!-- Modal 1: PROFILE -->
+        <div class="sphere-modal" id="modal-1">
+            <button class="close-modal">X</button>
+            <div class="modal-content">
+                <strong>PROFILE</strong><br>
+                LEE BOHEE (b. 1992)<br>
+                11 YRS EXP. AS FASHION DESIGNER<br><br>
+                <strong>SOFTWARE SKILLS</strong><br>
+                C4D, After Effects, Octane, ComfyUI, AI, Illustrator<br><br>
+                <strong>GET IN TOUCH</strong><br>
+                bohee0480@gmail.com<br>
+                YouTube: @melmeng_3d<br>
+            </div>
+        </div>
+
+        <!-- Modal 2: EDUCATION -->
+        <div class="sphere-modal" id="modal-2">
+            <button class="close-modal">X</button>
+            <div class="modal-content">
+                <strong>EDUCATION</strong><br>
+                2024-2026 | Motion Graphics, SBS Academy<br>
+                2010-2014 | B.A. Fashion Design, Seoul Arts College<br>
+                2007-2010 | Western Painting, Seoul Art High School<br><br>
+                <strong>CERTIFICATIONS</strong><br>
+                2025 | ACP: After Effects, Illustrator, Photoshop<br>
+                2025 | Generative AI Proficiency
+            </div>
+        </div>
+
+        <!-- Modal 3: DIRECTOR -->
+        <div class="sphere-modal" id="modal-3">
+            <button class="close-modal">X</button>
+            <div class="modal-content massive-modal-text">
+                FASHION DIRECTOR: 11 YEARS OVERSEEING PLANNING, PRODUCTION, AND DELIVERY FOR 300+ PROJECTS ANNUALLY
+            </div>
+        </div>
+
+        <!-- Modal 4: VISION -->
+        <div class="sphere-modal" id="modal-4">
+            <button class="close-modal">X</button>
+            <div class="modal-content massive-modal-text">
+                THE PROCESS OF <span class="highlight-word">IMAGINATION</span> BECOMING <span class="highlight-word">REALITY</span> TO DELIVER A POWERFUL MESSAGE<br><br>
+                THE JOY OF <span class="highlight-word">MOTION</span> REACHING SOMEONE AS A CLEAR MESSAGE<br><br>
+                WHERE STATIC IMAGES GAIN GREATER PERSUASION WITH <span class="highlight-word">MOTION</span> AND <span class="highlight-word">EMOTION</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- 1.5 INFINITE MARQUEE (3D Hologram Cylinder) -->
+    <div class="marquee-container">
+        <div class="marquee-3d-wrapper">
+            <!-- �쪽 (�리�반�방향�로 �동) -->
+            <div class="marquee-band marquee-back">
+                <div class="marquee-text">
+                    <span>/// DIGITAL_COUTURE /// 3D_VIRTUAL_CLOTHING /// TEXTILE_ALGORITHMS /// VIRTUAL_FASHION_ARCHIVE /// DESIGNED_BY_LEE_BOHEE /// </span>
+                    <span>/// DIGITAL_COUTURE /// 3D_VIRTUAL_CLOTHING /// TEXTILE_ALGORITHMS /// VIRTUAL_FASHION_ARCHIVE /// DESIGNED_BY_LEE_BOHEE /// </span>
+                    <span>/// DIGITAL_COUTURE /// 3D_VIRTUAL_CLOTHING /// TEXTILE_ALGORITHMS /// VIRTUAL_FASHION_ARCHIVE /// DESIGNED_BY_LEE_BOHEE /// </span>
+                    <span>/// DIGITAL_COUTURE /// 3D_VIRTUAL_CLOTHING /// TEXTILE_ALGORITHMS /// VIRTUAL_FASHION_ARCHIVE /// DESIGNED_BY_LEE_BOHEE /// </span>
+                </div>
+            </div>
+            <!-- �쪽 (�고 �명�고 �방�동) -->
+            <div class="marquee-band marquee-front">
+                <div class="marquee-text">
+                    <span>/// DIGITAL_COUTURE /// 3D_VIRTUAL_CLOTHING /// TEXTILE_ALGORITHMS /// VIRTUAL_FASHION_ARCHIVE /// DESIGNED_BY_LEE_BOHEE /// </span>
+                    <span>/// DIGITAL_COUTURE /// 3D_VIRTUAL_CLOTHING /// TEXTILE_ALGORITHMS /// VIRTUAL_FASHION_ARCHIVE /// DESIGNED_BY_LEE_BOHEE /// </span>
+                    <span>/// DIGITAL_COUTURE /// 3D_VIRTUAL_CLOTHING /// TEXTILE_ALGORITHMS /// VIRTUAL_FASHION_ARCHIVE /// DESIGNED_BY_LEE_BOHEE /// </span>
+                    <span>/// DIGITAL_COUTURE /// 3D_VIRTUAL_CLOTHING /// TEXTILE_ALGORITHMS /// VIRTUAL_FASHION_ARCHIVE /// DESIGNED_BY_LEE_BOHEE /// </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 2. PROCESS ARCHIVE (�상 �퍼�스 �이�웃) -->
+    <section class="process-archive" id="work">
+        <div class="archive-container">
+            
+            <div class="archive-header">
+                <h2>PROJECT DIRECTORY</h2>
+                <p>A collection of creative explorations in 3D, AI, and Fashion Directing.</p>
+            </div>
+
+            <!-- 01 AI -->
+            <div class="project-row">
+                <div class="project-info">
+                    <h3 class="scramble-text">01 // AI GENERATED<br>ART</h3>
+                    <p>From node structures and raw prompts in ComfyUI to<br>heavily retouched final imagery in Photoshop.</p>
+                    <div class="project-tags">
+                        <span>COMFYUI (org , nordy)</span>
+                        <span>higgsfield</span>
+                        <span>aftereffect</span>
+                          <span>CINEMA 4D</span>
+                    </div>
+                </div>
+                <div class="project-slider" data-type="clip-path">
+                    <!-- �른��역 (�드 �상 / 기본 바탕) -->
+                    <div class="slider-bg right-side">
+                        <video data-src="comfyui_node.mp4" loop muted playsinline></video>
+                    </div>
+                    <!-- �쪽 �역 (�성 �상 / �리부� -->
+                    <div class="slider-bg left-side">
+                        <video data-src="first_01_sunglass.mp4" loop muted playsinline></video>
+                    </div>
+                    <!-- �래��들 -->
+                    <div class="slider-handle">
+                        <span class="handle-text-left">RETOUCHED</span>
+                        <span class="handle-text-right">COMFYUI NODE</span>
+                    </div>
+                    <!-- �운�어 버튼 -->
+                    <button class="sound-toggle-btn">�� SOUND OFF</button>
+                </div>
+            </div>
+
+            <!-- 02 3D -->
+            <div class="project-row reverse">
+                <div class="project-info">
+                    <h3 class="scramble-text">02 // 3D MOTION<br>GRAPHICS (TYPE A)</h3>
+                    <p>Building the foundation in Cinema 4D, texturing and<br>lighting in Octane, and final compositing.</p>
+                    <div class="project-tags">
+                        <span>CINEMA 4D</span>
+                        <span>OCTANE</span>
+                        <span>AFTER EFFECTS</span>
+                    </div>
+                </div>
+                <div class="project-slider" data-type="clip-path">
+                    <div class="slider-bg right-side">
+                        <video data-src="previs_mp4_01.mp4" loop muted playsinline></video>
+                    </div>
+                    <div class="slider-bg left-side">
+                        <video data-src="first_1.mp4" loop muted playsinline></video>
+                    </div>
+                    <div class="slider-handle">
+                        <span class="handle-text-left">octaneRender</span>
+                        <span class="handle-text-right">viewRender</span>
+                    </div>
+                    <!-- �운�어 버튼 -->
+                    <button class="sound-toggle-btn">�� SOUND OFF</button>
+                </div>
+            </div>
+
+            <!-- 03 3D (SECOND TYPE) -->
+            <div class="project-row">
+                <div class="project-info">
+                    <h3 class="scramble-text">03 // 3D MOTION<br>GRAPHICS (TYPE B)</h3>
+                    <p>Building the foundation in Cinema 4D, texturing and<br>lighting in Octane, and final compositing.</p>
+                    <div class="project-tags">
+                        <span>CINEMA 4D</span>
+                        <span>OCTANE</span>
+                        <span>AFTER EFFECTS</span>
+                    </div>
+                </div>
+                <div class="project-slider" data-type="clip-path">
+                    <div class="slider-bg right-side">
+                        <video data-src="viewrender_02.mp4" loop muted playsinline></video>
+                    </div>
+                    <div class="slider-bg left-side">
+                        <video data-src="octane_19.mp4" loop muted playsinline></video>
+                    </div>
+                    <div class="slider-handle">
+                        <span class="handle-text-left">octaneRender</span>
+                        <span class="handle-text-right">viewRender</span>
+                    </div>
+                    <!-- �운�어 버튼 -->
+                    <button class="sound-toggle-btn">�� SOUND OFF</button>
+                </div>
+            </div>
+
+            <!-- 04 PERSONAL ARTWORKS I -->
+            <div class="project-row vertical-layout">
+                <div class="project-info" style="text-align: center; max-width: 100%;">
+                    <h3 class="scramble-text">04 // PERSONAL<br>ARTWORKS I</h3>
+                    <p>A visual diary of my ongoing journey to push creative boundaries.<br>An archive of daily experiments documenting my progress in 3D motion.</p>
+                    <div class="project-tags">
+                        <span>CINEMA 4D</span>
+                        <span>OCTANE</span>
+                        <span>AFTER EFFECTS</span>
+                    </div>
+                </div>
+                <div class="custom-4-grid">
+                    <div class="video-wrapper">
+                        <video data-src="Q_short.mp4" loop muted playsinline></video>
+                        <button class="sound-toggle-btn">�� SOUND OFF</button>
+                    </div>
+                    <div class="video-wrapper">
+                        <video data-src="vibe_milk_fin_short.mp4" loop muted playsinline></video>
+                        <button class="sound-toggle-btn">�� SOUND OFF</button>
+                    </div>
+                    <div class="video-wrapper">
+                        <video data-src="key_fin.mp4" loop muted playsinline></video>
+                        <button class="sound-toggle-btn">�� SOUND OFF</button>
+                    </div>
+                
+                    <div class="video-wrapper">
+                        <video data-src="game_fin.mp4" loop muted playsinline></video>
+                        <button class="sound-toggle-btn">�� SOUND OFF</button>
+                    </div>
+</div>
+            </div>
+
+            <!-- 05 PERSONAL ARTWORKS II -->
+            <div class="project-row">
+                <div class="project-info">
+                    <h3 class="scramble-text">05 // PERSONAL<br>ARTWORKS II</h3>
+                    <p>My personal creative playground.<br>Exploring new techniques and visual styles without boundaries.</p>
+                    <div class="project-tags">
+                        <span>CINEMA 4D</span>
+                        <span>OCTANE</span>
+                        <span>AFTER EFFECTS</span>
+                    </div>
+                </div>
+                <div class="custom-1-grid">
+                    <div class="video-wrapper">
+                        <video data-src="apocalypse_fin_04.mp4" loop muted playsinline></video>
+                        <button class="sound-toggle-btn">�� SOUND OFF</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 06 PERSONAL ARTWORKS III -->
+            <div class="project-row reverse">
+                <div class="project-info">
+                    <h3 class="scramble-text">06 // PERSONAL<br>ARTWORKS III</h3>
+                    <p>Driven by curiosity and consistency.<br>A space dedicated to continuous learning in 3D motion.</p>
+                    <div class="project-tags">
+                        <span>CINEMA 4D</span>
+                        <span>OCTANE</span>
+                        <span>AFTER EFFECTS</span>
+                    </div>
+                </div>
+                <div class="custom-1-grid">
+                    <div class="video-wrapper">
+                        <video data-src="player_fin__.mp4" loop muted playsinline></video>
+                        <button class="sound-toggle-btn">�� SOUND OFF</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 07 FASHION -->
+            <div class="project-row">
+                <div class="project-info">
+                    <h3 class="scramble-text">07 // FASHION<br>TECH PACKS</h3>
+                    <p>Understanding the foundation of apparel production:<br>hand-drawn worksheets detailing construction, materials, and fit.</p>
+                    <div class="project-tags">
+                        <span>TECH PACK</span>
+                        <span>PRODUCTION</span>
+                        <span>GARMENT CONSTRUCTION</span>
+                    </div>
+                </div>
+                <div class="video-original-wrapper" style="flex: 1.5; position: relative; width: 100%;">
+                    <video data-src="work_fashion.mp4" loop muted playsinline style="width: 100%; height: auto; display: block;"></video>
+                </div>
+            </div>
+
+            <div class="archive-footer-buttons">
+                <a href="https://www.youtube.com/@melmeng_3d" target="_blank" class="btn-outline">WATCH [YOUTUBE]</a>
+                <a href="https://www.instagram.com/muelmu3kism/" target="_blank" class="btn-outline">CONNECT [INSTAGRAM]</a>
+                <a href="mailto:bohee0480@gmail.com" class="btn-outline">CONNECT [EMAIL]</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. PROFILE CARDS SECTION -->
+    <section class="profile-cards" id="profile">
+<div class="cards-grid">
+
+<!-- Card 1: Identity & Stats -->
+<div class="card identity-card">
+    <div class="hud-sys-text">SYS.ID: 0x4829 // STATUS: ACTIVE</div>
+    <h3 class="card-title scramble-text">정보</h3>
+    <h4 class="card-subtitle scramble-text">Designer</h4>
+    <p class="card-desc scramble-text">실무 중심 패션 디자이너, 비즈니스구축, 3d+ai 작업자</p>
+    <div class="stats">
+        <div class="stat-item">
+            <span class="stat-num">11+</span>
+            <span class="stat-label">years</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-num">300+</span>
+            <span class="stat-label">연간제작 yearly</span>
+        </div>
+    </div>
+</div>
+
+<!-- Card 2: Contact -->
+<div class="card contact-card">
+    <div class="hud-sys-text">NET.LINK: ESTABLISHED</div>
+    <h3 class="card-title scramble-text">CONTACT</h3>
+    <ul class="contact-list">
+        <li><span class="contact-label">E-mail</span> <span class="contact-val scramble-text">bohee0480@gmail.com</span></li>
+        <li><span class="contact-label">INST</span> <span class="contact-val scramble-text">muelmu3kism</span></li>
+        <li><span class="contact-label">Linkedin</span> <span class="contact-val scramble-text">www.linkedin.com/in/muelmu3kism</span></li>
+    </ul>
+</div>
+
+<!-- Card 3: Experience -->
+<div class="card exp-card">
+    <div class="hud-sys-text">DATABANK: LOADED</div>
+    <h3 class="card-title scramble-text">경력</h3>
+    <ul class="exp-list">
+        <li>
+            <span class="exp-date">2024.12-2026.03</span>
+            <span class="exp-detail scramble-text">SBS아카데미 모션그래픽과 수료</span>
+        </li>
+        <li>
+            <span class="exp-date">2018.04-2024.10</span>
+            <span class="exp-detail scramble-text">도매매장, 쇼핑몰, 개인브랜드 샘플생산, 메인생산, 납품 관리 및 S/S, F/W 디렉팅</span>
+        </li>
+        <li>
+            <span class="exp-date">2014.07-2018.04</span>
+            <span class="exp-detail scramble-text">동대문 도매 정규직</span>
+        </li>
+        <li>
+            <span class="exp-date">2013.08-2014.06</span>
+            <span class="exp-detail scramble-text">General idea 인턴 비정규직</span>
+        </li>
+    </ul>
+</div>
+
+<!-- Card 4: Core Competencies -->
+<div class="card core-card">
+    <div class="hud-sys-text">CORE.SYS: OPTIMAL</div>
+    <h3 class="card-title scramble-text">핵심 역량</h3>
+    <p class="card-desc scramble-text" style="margin-bottom: 2rem;">ai_3d디자이너, 모션디자이너, 패션디자이너</p>
+    
+    <div class="stat-bars">
+        <div class="stat-bar-item">
+            <div class="stat-bar-header">
+                <span class="stat-name">[ FASHION DIRECTING ]</span>
+                <span class="stat-pct">100%</span>
+            </div>
+            <div class="stat-bar-track">
+                <div class="stat-bar-fill" style="width: 100%;"></div>
+            </div>
+            <div class="stat-bar-desc">11년 실무 기반의 기획/생산 총괄 및 브랜드 디렉팅</div>
+        </div>
+        
+        <div class="stat-bar-item">
+            <div class="stat-bar-header">
+                <span class="stat-name">[ 3D MOTION GRAPHIC ]</span>
+                <span class="stat-pct">85%</span>
+            </div>
+            <div class="stat-bar-track">
+                <div class="stat-bar-fill" style="width: 85%;"></div>
+            </div>
+            <div class="stat-bar-desc">C4D & Octane 기반의 초현실적 3D 비주얼 구현</div>
+        </div>
+        
+        <div class="stat-bar-item">
+            <div class="stat-bar-header">
+                <span class="stat-name">[ AI ART WORKFLOW ]</span>
+                <span class="stat-pct">85%</span>
+            </div>
+            <div class="stat-bar-track">
+                <div class="stat-bar-fill" style="width: 85%;"></div>
+            </div>
+            <div class="stat-bar-desc">ComfyUI 등 생성형 AI를 3D 파이프라인에 융합</div>
+        </div>
+    </div>
+</div>
+    <h3 class="card-title scramble-text">핵심 역량</h3>
+    <p class="card-desc scramble-text">ai_3d디자이너, 모션디자이너, 패션디자이너</p>
+</div>
+
+<!-- Card 5: Tools -->
+<div class="card tools-card">
+    <div class="hud-sys-text">MODULES: 7 ONLINE</div>
+    <h3 class="card-title scramble-text">프로그램</h3>
+    <div class="tool-tags">
+        <span class="scramble-text">C4D</span>
+        <span class="scramble-text">aftereffects</span>
+        <span class="scramble-text">octane</span>
+        <span class="scramble-text">comfyui</span>
+        <span class="scramble-text">Illustrator</span>
+        <span class="scramble-text">Antigravity</span>
+        <span class="scramble-text">claude code</span>
+    </div>
+            </div>
+
+        </div>
+    </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer terminal-footer">
+        <div class="footer-content">
+            <span class="footer-text">[SYS. ONLINE] LEE BOHEE PORTFOLIO // 3D MOTION // AI ART // FASHION DIRECTING <span class="blink-cursor">█</span></span>
+        </div>
+    </footer>
+
+    <!-- Custom Cursor (Cyberpunk HUD) -->
+    <div class="cursor-glitch cursor-cyan"></div>
+    <div class="cursor-glitch cursor-magenta"></div>
+    <div class="cursor-dot"></div>
+    <div class="cursor-ring"></div>
+    <div class="cursor-coords">[X: 000, Y: 000]</div>
+
+    <!-- �크립트 �동 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="index.js"></script>
+    <script src="particles.js"></script>
+    <script src="character_lego.js?v=6"></script>
+
+    <!-- AI Chatbot UI -->
+    <div class="chat-toggle-btn" id="chatToggleBtn">
+        <div class="chat-icon-text">AI</div>
+        <div class="chat-icon-dot"></div>
+    </div>
+    
+    <div class="chat-terminal hidden" id="chatTerminal">
+        <div class="chat-header">
+            <span>BOH.EE TERMINAL v2.0</span>
+            <button id="chatCloseBtn" class="chat-close-btn">[X]</button>
+        </div>
+        <div class="chat-messages" id="chatMessages">
+            <div class="chat-message system">> SYSTEM READY</div>
+            <div class="chat-message system">> TYPE A QUESTION ABOUT MY WORK</div>
+            <div class="chat-message system">> 이보희 디자이너에게 궁금한 점을 물어보세요.</div>
+        </div>
+        <div class="chat-input">
+            <span class="chat-input-prefix">></span>
+            <input type="text" id="chatInput" placeholder="여기에 질문 입력 후 Enter..." autocomplete="off">
+        </div>
+    </div>
+
+</body>
+</html>
+

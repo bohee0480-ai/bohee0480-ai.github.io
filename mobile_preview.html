@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>📱 모바일 미리보기 — LEE BOHEE PORTFOLIO</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background: #1a1a1a;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: 'Inter', sans-serif;
+            color: #fff;
+        }
+        .phone-frame {
+            width: 393px;
+            height: 852px;
+            border: 8px solid #333;
+            border-radius: 40px;
+            overflow: hidden;
+            box-shadow: 0 0 60px rgba(204, 255, 0, 0.15), 0 20px 60px rgba(0,0,0,0.5);
+            position: relative;
+            background: #000;
+        }
+        .phone-frame::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 28px;
+            background: #1a1a1a;
+            border-radius: 0 0 16px 16px;
+            z-index: 10;
+        }
+        .phone-frame iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        .label {
+            position: absolute;
+            bottom: -50px;
+            text-align: center;
+            width: 100%;
+            color: #666;
+            font-size: 14px;
+            font-weight: 600;
+        }
+        .wrapper {
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="phone-frame">
+            <iframe src="index.html"></iframe>
+        </div>
+        <div class="label">iPhone 14 Pro — 393 × 852</div>
+    </div>
+</body>
+</html>
