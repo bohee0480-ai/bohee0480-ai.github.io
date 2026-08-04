@@ -423,6 +423,29 @@ document.addEventListener('DOMContentLoaded', () => {
             const container = soundBtn.closest('.project-slider') || soundBtn.closest('.video-wrapper');
             if (!container) return;
             
+            // project-slider (01, 02, 03): left-side video only sound toggle
+            const slider = soundBtn.closest('.project-slider');
+            if (slider) {
+                const leftVideo = slider.querySelector('.left-side video');
+                const rightVideo = slider.querySelector('.right-side video');
+                
+                // Right video always muted
+                if (rightVideo) {
+                    rightVideo.muted = true;
+                }
+                
+                // Toggle left video only
+                if (leftVideo) {
+                    leftVideo.muted = !leftVideo.muted;
+                    if (!leftVideo.muted) {
+                        leftVideo.volume = 1.0;
+                    }
+                    soundBtn.textContent = leftVideo.muted ? '🔇 SOUND OFF' : '🔊 SOUND ON';
+                }
+                return;
+            }
+            
+            // video-wrapper (04, 05, 06): single video toggle
             const videos = container.querySelectorAll('video');
             let isMuted = true;
             videos.forEach(video => {
