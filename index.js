@@ -894,8 +894,15 @@ document.addEventListener('DOMContentLoaded', () => {
             const video = entry.target;
             if (entry.isIntersecting) {
                 // 화면에 보이면 -> 비디오 로드 및 재생
+                // right-side video is always forced muted
+                const isRightSide = video.closest('.right-side');
+                if (isRightSide) {
+                    video.muted = true;
+                }
                 if (!video.src && video.dataset.src) {
                     video.src = video.dataset.src;
+                    // Ensure right-side stays muted after src is set
+                    if (isRightSide) { video.muted = true; }
                     video.play().catch(e => console.log('Autoplay blocked', e));
                 } else if (video.src) {
                     video.play().catch(e => console.log('Autoplay blocked', e));
