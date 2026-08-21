@@ -415,12 +415,14 @@ document.addEventListener('DOMContentLoaded', () => {
     soundBtns.forEach(soundBtn => {
         soundBtn.textContent = '🔇 SOUND OFF';
         
+        soundBtn.textContent = '🔇 SOUND OFF';
+        
         soundBtn.addEventListener('click', (e) => {
             e.preventDefault();
             e.stopPropagation();
             
             // Find parent container that holds videos
-            const container = soundBtn.closest('.project-slider') || soundBtn.closest('.video-wrapper');
+            const container = soundBtn.closest('.project-slider') || soundBtn.closest('.video-wrapper') || soundBtn.closest('.video-original-wrapper');
             if (!container) return;
             
             // project-slider (01, 02, 03): left-side video only sound toggle
