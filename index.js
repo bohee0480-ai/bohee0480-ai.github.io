@@ -1,4 +1,4 @@
-﻿document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {
     // === 네비게이션 및 스크롤 UI 동적 생성 ===
     const navUI = `
     <div class="scroll-progress-bar" id="scroll-progress"></div>
@@ -923,6 +923,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { threshold: 0.1 });
 
     document.querySelectorAll('video[data-src]').forEach(v => videoObserver.observe(v));
+});
 
     // =========================================
 
