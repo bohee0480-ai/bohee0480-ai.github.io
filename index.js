@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+﻿document.addEventListener('DOMContentLoaded', () => {
     // === 네비게이션 및 스크롤 UI 동적 생성 ===
     const navUI = `
     <div class="scroll-progress-bar" id="scroll-progress"></div>
@@ -415,8 +415,6 @@ document.addEventListener('DOMContentLoaded', () => {
     soundBtns.forEach(soundBtn => {
         soundBtn.textContent = '🔇 SOUND OFF';
         
-        soundBtn.textContent = '🔇 SOUND OFF';
-        
         soundBtn.addEventListener('click', (e) => {
             e.preventDefault();
             e.stopPropagation();
@@ -447,13 +445,19 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
             
-            // video-wrapper (04, 05, 06): single video toggle
+            // video-wrapper or video-original-wrapper: single video toggle
             const videos = container.querySelectorAll('video');
             let isMuted = true;
             videos.forEach(video => {
+                // Lazy-load: data-src가 있는데 src가 없으면 먼저 src 설정
+                if (!video.src && video.dataset.src) {
+                    video.src = video.dataset.src;
+                    video.load();
+                }
                 video.muted = !video.muted;
                 if (!video.muted) {
                     video.volume = 1.0;
+                    video.play();
                 }
                 isMuted = video.muted;
             });
