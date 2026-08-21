@@ -925,43 +925,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('video[data-src]').forEach(v => videoObserver.observe(v));
 
     // =========================================
-    // CLIMAX START: 영상을 클라이막스 구간에서 시작
-    // =========================================
-    // 각 영상의 클라이막스 구간 (초 단위) 정의
-    // 영상 작가가 의도한 임팩트 구간 - 랜덤 범위 [min, max]
-    const climaxMap = {
-        'Comp 1_1.mp4':    [8,  14],
-        'Comp 1_2.mp4':    [5,  10],
-        'Comp 1_3.mp4':    [5,  10],
-        'Comp 1_4.mp4':    [6,  12],
-        'Comp 1_5.mp4':    [6,  12],
-        'Comp 1_6.mp4':    [4,  9],
-        'Comp 1_7.mp4':    [4,  9],
-        'Comp 3.mp4':      [5,  12],
-        'Comp 3_2.mp4':    [5,  12],
-        'Comp 3_3.mp4':    [3,  8],
-        'Comp 3_4.mp4':    [3,  8],
-        'previs_mp4_01.mp4': [8, 16],
-        '1080.mp4':        [4,  10],
-        'ai_image.mp4':    [10, 25],
-        'confyui_node.mp4': [10, 22],
-    };
 
-    document.querySelectorAll('video[data-src]').forEach(video => {
-        const src = video.dataset.src;
-        const range = climaxMap[src];
-        if (!range) return;
-
-        video.addEventListener('canplay', () => {
-            const [min, max] = range;
-            // duration 고려: 영상 길이 안에서 랜덤
-            const safMax = video.duration ? Math.min(max, video.duration * 0.85) : max;
-            const safMin = Math.min(min, safMax - 1);
-            const randomTime = safMin + Math.random() * (safMax - safMin);
-            video.currentTime = randomTime;
-        }, { once: true });
-    });
-})
 // =========================================
 // AI CHATBOT TERMINAL LOGIC
 // =========================================
