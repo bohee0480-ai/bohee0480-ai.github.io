@@ -532,6 +532,30 @@ body.light-mode .blueprint-bg {
     grid-template-columns: 1fr 1fr;
     max-width: 1000px !important; /* Limit width of grid to look good in center */
 }
+.custom-2-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    flex: 1.5;
+    min-width: 0;
+    width: 100%;
+}
+.custom-2-grid .video-wrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 4px;
+}
+.custom-2-grid .video-wrapper video {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+@media (max-width: 768px) {
+    .custom-2-grid {
+        grid-template-columns: 1fr;
+    }
+}
 .project-row.vertical-layout .project-tags {
     justify-content: center;
 }
